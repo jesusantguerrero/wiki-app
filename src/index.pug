@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Wiki-App
+    link(rel="stylesheet", href="./src/css/styles.css")
+  body
+    #wiki-app
+      h1.logo Wiki<span class="primary-color animated shake infinite">App</span>
+      .search-container
+        input.search(type="search",placeholder="if not existis we'll invent it", v-model='text', @keyup="type", @search="type", @keypress.enter="search")
+        a.btn-action(:class="{typing: isTyping}", v-if="empty, :href="link", target="results"): i.material-icons {{icon}}
+        button.btn-action(:class="{typing: isTyping}", v-if="empty", @click="search"): i.material-icons book
+      .welcome {{ message }} <b class="wikealo" :class="{wikeando: isSearching}" :title="wikealo"> wikealo* :D</b>
+        .list-container(v-if="results" , class="animated")
+          article.list-item(v-for="item in items")
+            h2.title.primary-color {{ item.pageid }} 
+            summary
+              p.text {{ item.extract }}
+              a.btn.action(:href="item.url", target="_blank") go there
+    script(src="./src/js/vue.min.js")
+    script(src="./src/js/main.js")

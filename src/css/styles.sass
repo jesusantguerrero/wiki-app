@@ -1,0 +1,107 @@
+//vars and mixings
+$primary-color: #03A9F4
+$contrast-color: #F4511E
+$light-color: #fdfdfd
+=makeFlex($width, $direction, $justify, $align)
+  display: flex
+  width: $width
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+  
+@import url('https://fonts.googleapis.com/css?family=Merienda+One')
+
+// styles
+*
+  box-sizing: border-box
+  margin: auto
+  padding: 0
+  font-family: sans-serif
+  transition: all ease .3s 
+body
+  background-color: $light-color
+  color: #555
+  min-height: 100vh
+  padding: 20px
+  +makeFlex(100%, row, center, center)
+.primary-color
+  color: $primary-color
+.contrast-color
+  color: $contrast-color
+#wiki-app
+  +makeFlex(100%, column, center, center)
+.logo 
+  font-family: 'Merienda One', cursive
+  color: $contrast-color
+.search-container
+  margin: 15px 0 20px 0
+  height: 42px
+  +makeFlex(100%, row, center , center)
+.search,
+[class*=btn]
+  height: 100%
+  padding: 5px
+  margin: 0 5px
+  text-align: center
+  min-width: 70px
+[class*=btn]
+  background: $contrast-color
+  border: 0
+  height: 100%
+  cursor: pointer
+  color: $light-color
+  font-weight: bolder
+  border: 2px solid $contrast-color
+
+.search
+  width: 40%
+  border: 2px solid #ccc
+  font-size: 18px
+  
+.wikealo
+  cursor: pointer
+.typing
+  background: $light-color
+  animation: smooth-type .2s
+.list-container
+  margin-top: 20px
+  width: 50%
+.list-item
+  padding: 20px
+  width: 100%
+  border: 1px solid #ddd
+  text-align: center
+  summary
+    display: none
+    transition: all ease 5s
+    button
+      
+  &:hover
+    border-color: $contrast-color
+    cursor: pointer
+    summary
+      display: block
+    
+.wikeando
+  animation: wikeando infinite .3s
+@keyframes smooth-type
+  0%
+    background: $contrast-color
+    color: $contrast-color
+  100%
+    background: $light-color
+    color: $contrast-color
+  
+@keyframes wikeando
+  0%
+    color: $contrast-color
+  100%
+    color: $primary-color
+  
+@media (max-width: 678px)
+  .search-container,
+  .list-container
+    width: 100%
+  [class*=btn]
+  .search
+    width: 90%
