@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Wiki-App</title>
+    <link rel="stylesheet" href="./src/css/styles.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  </head>
+  <body>
+    <div id="wiki-app">
+      <h1 class="logo">Wiki<span class="primary-color animated shake infinite">App</span></h1>
+      <div class="search-container">
+        <input class="search" type="search" placeholder="if not existis we'll invent it" v-model="text" @keyup="type" @search="type" @keypress.enter="search"/><a class="btn-action" :class="{typing: isTyping}" v-if="empty" :href="link" target="_blank"><i class="material-icons">{{icon}}</i></a>
+        <button class="btn-action" :class="{typing: isTyping}" v-if="!empty" @click="search"><i class="material-icons">{{icon}}</i></button>
+      </div>
+      <div class="welcome">{{ message }} <b class="wikealo" :class="{wikeando: isSearching}" :title="wikealo"> wikealo* :D</b></div>
+      <transition name="fade-in">
+        <div class="list-container animated" v-if="results">
+          <article class="list-item" v-for="item in items">
+            <h4 class="title primary-color">{{ item.title }} </h4>
+            <summary>
+              <p class="text">{{ item.extract }}</p><a class="btn action" :href="item.url" target="_blank">go there</a>
+            </summary>
+          </article>
+        </div>
+      </transition>
+    </div>
+    <script src="./src/js/vue.min.js"></script>
+    <script src="./src/js/main.js"></script>
+  </body>
+</html>

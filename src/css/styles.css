@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda+One");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+  font-family: sans-serif;
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  transition: all ease .3s; }
+
+body {
+  background-color: #fdfdfd;
+  color: #555;
+  min-height: 100vh;
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.primary-color {
+  color: #03A9F4; }
+
+.contrast-color {
+  color: #F4511E; }
+
+#wiki-app {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.logo {
+  font-family: 'Merienda One', cursive;
+  color: #F4511E; }
+
+.search-container {
+  margin: 15px 0 20px 0;
+  height: 42px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.search,
+[class*=btn] {
+  height: 100%;
+  padding: 5px;
+  margin: 0 5px;
+  text-align: center;
+  min-width: 70px; }
+
+[class*=btn] {
+  background: #F4511E;
+  border: 0;
+  height: 100%;
+  cursor: pointer;
+  color: #fdfdfd;
+  font-weight: bolder;
+  border: 2px solid #F4511E; }
+
+.search {
+  width: 40%;
+  border: 2px solid #ccc;
+  font-size: 18px; }
+
+.wikealo {
+  cursor: pointer; }
+
+.typing {
+  background: #fdfdfd;
+  -webkit-animation: smooth-type .2s;
+  animation: smooth-type .2s; }
+
+.list-container {
+  margin-top: 20px;
+  width: 50%; }
+
+.list-item {
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  text-align: center; }
+  .list-item summary {
+    display: none;
+    -webkit-transition: all ease 5s;
+    -o-transition: all ease 5s;
+    transition: all ease 5s;
+    color: #444;
+    margin: 15px 0; }
+    .list-item summary .action {
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      background: white;
+      color: #03A9F4;
+      border: 2px solid #03A9F4; }
+      .list-item summary .action:hover {
+        background: #03A9F4; }
+  .list-item:hover {
+    border-color: #F4511E;
+    cursor: pointer; }
+    .list-item:hover summary {
+      display: block; }
+
+.wikeando {
+  -webkit-animation: wikeando infinite .3s;
+  animation: wikeando infinite .3s; }
+
+@-webkit-keyframes smooth-type {
+  0% {
+    background: #F4511E;
+    color: #F4511E; }
+  100% {
+    background: #fdfdfd;
+    color: #F4511E; } }
+
+@keyframes smooth-type {
+  0% {
+    background: #F4511E;
+    color: #F4511E; }
+  100% {
+    background: #fdfdfd;
+    color: #F4511E; } }
+
+@-webkit-keyframes wikeando {
+  0% {
+    color: #F4511E; }
+  100% {
+    color: #03A9F4; } }
+
+@keyframes wikeando {
+  0% {
+    color: #F4511E; }
+  100% {
+    color: #03A9F4; } }
+
+@media (max-width: 678px) {
+  .search-container,
+  .list-container {
+    width: 100%; }
+  .search {
+    width: 90%; } }

@@ -1,4 +1,3 @@
-
 const wikiApp = new Vue({
   el: '#wiki-app',
   data: {
@@ -20,18 +19,18 @@ const wikiApp = new Vue({
       this.isTyping = true
       setTimeout(() => this.isTyping = false, 200)
       if (this.text) {
-        this.icon = 'search' 
-        this.empty = true
-      } else  {
+        this.icon = 'search'
+        this.empty = false
+      } else {
         this.icon = 'shuffle'
         this.results = false
-        this.empty = false
+        this.empty = true
       }
     },
     getText() {
-      return this.text.replace(/\s/g, '%20') 
+      return this.text.replace(/\s/g, '%20')
     },
-    search () {
+    search() {
       const endpoint = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=${this.getText()}`
       const self = this;
       self.isSearching = true
@@ -41,7 +40,7 @@ const wikiApp = new Vue({
         .then((res) => self.setResults(res))
         .catch((err) => console.error(err))
     },
-    
+
     setResults(res) {
       console.log(res)
       const self = this
@@ -50,13 +49,12 @@ const wikiApp = new Vue({
       const keys = Object.keys(pages)
       self.results = true
       self.isSearching = false
-  
+
       keys.forEach((key) => {
         const thePage = pages[key]
-        thePage.url = `https://en.wikipedia.org/?curid=${thePage}`
+        thePage.url = `https://en.wikipedia.org/?curid=${thePage.pageid}`
         self.items.push(thePage)
       })
     }
-  } 
+  }
 })
-
