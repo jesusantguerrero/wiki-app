@@ -12,7 +12,7 @@ html(lang="en")
       h1.logo Wiki<span class="primary-color animated shake infinite">App</span>
       .search-container
         input.search(type="search",placeholder="if not existis we'll invent it", v-model='text', @keyup="type", @search="type", @keypress.enter="search")
-        a.btn-action(:class="{typing: isTyping}", v-if="empty", :href="link", target="_blank"): i.material-icons {{icon}}
+        a.btn-action(:class="{typing: isTyping}", v-if="empty", :href="random", target="_blank"): i.material-icons {{icon}}
         button.btn-action(:class="{typing: isTyping}", v-if="!empty", @click="search"): i.material-icons {{icon}}
       .welcome {{ message }} <b class="wikealo" :class="{wikeando: isSearching}" :title="wikealo"> wikealo* :D</b>
       transition(name="fade-in")

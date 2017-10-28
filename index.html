@@ -12,7 +12,7 @@
     <div id="wiki-app">
       <h1 class="logo">Wiki<span class="primary-color animated shake infinite">App</span></h1>
       <div class="search-container">
-        <input class="search" type="search" placeholder="if not existis we'll invent it" v-model="text" @keyup="type" @search="type" @keypress.enter="search"/><a class="btn-action" :class="{typing: isTyping}" v-if="empty" :href="link" target="_blank"><i class="material-icons">{{icon}}</i></a>
+        <input class="search" type="search" placeholder="if not existis we'll invent it" v-model="text" @keyup="type" @search="type" @keypress.enter="search"/><a class="btn-action" :class="{typing: isTyping}" v-if="empty" :href="random" target="_blank"><i class="material-icons">{{icon}}</i></a>
         <button class="btn-action" :class="{typing: isTyping}" v-if="!empty" @click="search"><i class="material-icons">{{icon}}</i></button>
       </div>
       <div class="welcome">{{ message }} <b class="wikealo" :class="{wikeando: isSearching}" :title="wikealo"> wikealo* :D</b></div>

@@ -10,7 +10,6 @@ const wikiApp = new Vue({
     wikealo: "it's like google it, but in wikipedia xD...",
     items: [],
     results: false,
-    link: '',
     random: 'https://en.wikipedia.org/wiki/Special:Random',
     message: ' Dont know something? '
   },
